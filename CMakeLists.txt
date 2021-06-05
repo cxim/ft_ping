@@ -1,0 +1,1 @@
+project(ft_ping)

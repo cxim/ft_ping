@@ -7,30 +7,30 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCInformation.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCXXInformation.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/CMakeFindCodeBlocks.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/CMakeGenericSystem.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/CMakeInitializeConfigs.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU-C.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU-CXX.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU-C.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU-CXX.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/Platform/UnixPaths.cmake"
-  "/home/cxim1/Downloads/clion-2021.1.1/bin/cmake/linux/share/cmake-3.19/Modules/ProcessorCount.cmake"
   "../CMakeLists.txt"
   "CMakeFiles/3.19.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.19.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.19.2/CMakeSystem.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCInformation.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCXXInformation.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/CMakeFindCodeBlocks.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/CMakeGenericSystem.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/CMakeInitializeConfigs.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU-C.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU-CXX.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/Compiler/GNU.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU-C.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU-CXX.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux-GNU.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/Platform/Linux.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/Platform/UnixPaths.cmake"
+  "/home/cxim/Загрузки/clion-2021.1.2/bin/cmake/linux/share/cmake-3.19/Modules/ProcessorCount.cmake"
   )
 
 # The corresponding makefile is:
@@ -46,4 +46,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/ft_ping.dir/DependInfo.cmake"
   )

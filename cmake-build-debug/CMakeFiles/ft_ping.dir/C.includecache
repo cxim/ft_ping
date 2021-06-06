@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cxim/21school/ft_ping/ft_ping.h
+stdio.h
+-
+unistd.h
+-
+ft_printf/includes/printf.h
+/home/cxim/21school/ft_ping/ft_printf/includes/printf.h
+
+/home/cxim/21school/ft_ping/ft_printf/includes/libft/libft.h
+unistd.h
+-
+stdlib.h
+-
+string.h
+-
+fcntl.h
+-
+
+/home/cxim/21school/ft_ping/ft_printf/includes/printf.h
+stdio.h
+-
+unistd.h
+-
+stdarg.h
+-
+fcntl.h
+-
+libft/libft.h
+/home/cxim/21school/ft_ping/ft_printf/includes/libft/libft.h
+
+/home/cxim/21school/ft_ping/main.c
+ft_ping.h
+/home/cxim/21school/ft_ping/ft_ping.h
+

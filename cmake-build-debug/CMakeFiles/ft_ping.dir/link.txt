@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/ft_ping.dir/main.c.o -o ft_ping  ../ft_printf/libftprintf.a 
+/usr/bin/cc -g CMakeFiles/ft_ping.dir/main.c.o -o ft_ping  ../ft_printf/libftprintf.a -lm 

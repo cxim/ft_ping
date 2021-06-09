@@ -1,0 +1,3 @@
+/home/cxim/21school/ft_ping/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/cxim/21school/ft_ping/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cxim/21school/ft_ping/cmake-build-debug/CMakeFiles/ft_ping.dir

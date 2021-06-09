@@ -10,4 +10,5 @@ add_executable(ft_ping
         )
 
 target_link_libraries(ft_ping
-        ${PROJECT_SOURCE_DIR}/ft_printf/libftprintf.a)
+        ${PROJECT_SOURCE_DIR}/ft_printf/libftprintf.a
+        m)

@@ -51,7 +51,7 @@ typedef struct s_response
 	struct msghdr	msghdr;
 }				t_response;
 
-typedef struct s_params
+typedef struct s_parametrs
 {
     struct sockaddr_in *sock;
     int 	flag_v;
@@ -68,8 +68,8 @@ typedef struct s_params
 	int 	seq;
 	t_response response;
 	int 	byte_received;
-}               t_params;
+}               t_parametrs;
 
-extern t_params *g_params;
+extern t_parametrs *g_parametrs;
 
 #endif //FT_PING__FT_PING_H_

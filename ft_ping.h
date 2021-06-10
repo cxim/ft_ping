@@ -53,6 +53,7 @@ typedef struct s_response
 
 typedef struct s_parametrs
 {
+	struct addrinfo *res;
     struct sockaddr_in *sock;
     int 	flag_v;
     int     sock_fd;

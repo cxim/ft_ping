@@ -19,6 +19,10 @@ void rtt_info()
 	g_parametrs->time.rtt = rtt;
 	if (rtt > g_parametrs->time.max)
 		g_parametrs->time.max = rtt;
+	if (g_parametrs->time.min == 0.0)
+		g_parametrs->time.min = rtt;
+	else if (g_parametrs->time.min > rtt)
+		g_parametrs->time.min = rtt;
 	g_parametrs->time.avg += rtt;
 	g_parametrs->time.sum_sqrt += rtt * rtt;
 }
@@ -203,8 +207,8 @@ void free_params()
 //		free(params->host_name);
 //    free(params->sock);
 //	free(params->addr_str); 	g_parametrs->sock = (struct sockaddr_in *)res->ai_addr;
-
-//	free(g_parametrs);
+	freeaddrinfo(g_parametrs->res);
+	free(g_parametrs);
 
 }
 
@@ -229,15 +233,15 @@ void init()
 int get_host_info()
 {
 	struct addrinfo start;
-	struct addrinfo *res;
+//	struct addrinfo *res;
 
 	ft_bzero(&start, sizeof(start));
 	start.ai_family = AF_INET;
 	start.ai_socktype = SOCK_RAW;
 	start.ai_protocol = IPPROTO_ICMP;
-	if (getaddrinfo(g_parametrs->host_name, NULL, &start, &res) != 0)
+	if (getaddrinfo(g_parametrs->host_name, NULL, &start, &g_parametrs->res) != 0)
 		return (1);
-	g_parametrs->sock = (struct sockaddr_in *)res->ai_addr;
+	g_parametrs->sock = (struct sockaddr_in *)g_parametrs->res->ai_addr;
 	return (0);
 }
 

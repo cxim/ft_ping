@@ -10,7 +10,7 @@ void rtt_info()
 	if (gettimeofday(&g_parametrs->time.r, NULL) < 0)
 	{
 		ft_putstr_fd("Error: timeofday\n", 2);
-		exit(0);
+		exit(2);
 	}
 	g_parametrs->received++;
 	rtt = (g_parametrs->time.r.tv_usec - g_parametrs->time.s.tv_usec) / 1000000.0;
@@ -54,7 +54,7 @@ void receive_from_host()
 		if (rec > 0)
 		{
 			g_parametrs->byte_received = rec;
-			if (g_parametrs->pack.icmp->un.echo.id == g_parametrs->pid)
+			if (g_parametrs->pack.icmp->type == ICMP_ECHOREPLY)
 			{
 				rtt_info();
 				if (g_parametrs->host_name != g_parametrs->addr_str)
@@ -118,12 +118,12 @@ void send_to_host()
 	if (sendto(g_parametrs->sock_fd, (void *)&g_parametrs->pack, 84, 0, (void *)g_parametrs->sock, sizeof(struct sockaddr_in)) < 0)
 	{
 		ft_putstr_fd("Error: sendto\n", 2);
-		exit(0);
+		exit(2);
 	}
 	if (gettimeofday(&g_parametrs->time.s, NULL) < 0)
 	{
 		ft_putstr_fd("Error: gettimeofday\n", 2);
-		exit(0);
+		exit(2);
 	}
 	g_parametrs->send > 1 ? gettimeofday(&g_parametrs->time.start, NULL) : 0;
 	g_parametrs->send++;
@@ -139,12 +139,12 @@ void get_socket_fd()
 	if (g_parametrs->sock_fd == -1)
 	{
 		ft_putstr_fd("Socket file descriptor not received!\n", 2);
-		exit(1);
+		exit(2);
 	}
 	if (setsockopt(g_parametrs->sock_fd, IPPROTO_IP, IP_HDRINCL, &opt_val, sizeof(int)) < 0)
 	{
 		ft_putstr_fd("Error: setsockopt\n", 2);
-		exit(0);
+		exit(2);
 	}
 //	ft_printf("%d\n", g_parametrs->sock_fd);
 }
@@ -233,7 +233,6 @@ void init()
 int get_host_info()
 {
 	struct addrinfo start;
-//	struct addrinfo *res;
 
 	ft_bzero(&start, sizeof(start));
 	start.ai_family = AF_INET;
@@ -248,25 +247,41 @@ int get_host_info()
 void get_arguments(int ac, char **av)
 {
     int i;
+	int count;
+	int stop;
 
+	stop = 0;
+	count = 1;
     i = 1;
     while (i < ac)
     {
         if (av[i][0] == '-')
         {
-        	if (av[i][1] == 'h')
+			while (av[i][count] != '\0')
 			{
-				ft_printf("Usage: ft_ping [-h help] [-v verbose] hostname");
-				exit(0);
-			}
-        	else if (av[i][1] == 'v')
-			{
-				g_parametrs->flag_v = 1;
-			}
-        	else
-			{
-				ft_printf(":smile_2  error: flag ne o4en`\n");
-				exit(1);
+				if (av[i][count] == 'h' && stop < 2)
+				{
+					stop++;
+					ft_putstr_fd("Usage: ft_ping [-h help] [-v verbose] hostname\n", 2);
+					exit(2);
+				}
+				else if (av[i][count] == 'v' && stop < 2)
+				{
+					stop++;
+					g_parametrs->flag_v = 1;
+				}
+				else if (stop == 0)
+				{
+					ft_putchar_fd(av[i][count], 2);
+					ft_putstr_fd(" <- :smile_2  error: flag ne o4en`\n", 2);
+					ft_putstr_fd("Usage: ft_ping [-h help] [-v verbose] hostname\n", 2);
+					exit(2);
+				}
+				else if (g_parametrs->flag_v == 1 && av[i][count] != 'v')
+				{
+					stop++;
+				}
+				count++;
 			}
         }
         else
@@ -274,10 +289,11 @@ void get_arguments(int ac, char **av)
 			g_parametrs->host_name = av[i];
         	if (get_host_info())
 			{
-				ft_printf("ft_ping: %s : ", g_parametrs->host_name);
-				ft_printf(":smile_2  Name or service not known\n");
-//				free_params(g_parametrs);
-				exit(0);
+				ft_putstr_fd("ft_ping: ", 2);
+				ft_putstr_fd(g_parametrs->host_name, 2);
+				ft_putstr_fd(": ", 2);
+				ft_putstr_fd(" Name or service not known!!\n", 2);
+				exit(1);
 			}
         	inet_ntop(AF_INET, (void *)&g_parametrs->sock->sin_addr, g_parametrs->addr_str, INET6_ADDRSTRLEN);
 		}
@@ -287,7 +303,6 @@ void get_arguments(int ac, char **av)
 
 int main(int ac, char **av)
 {
-//    t_parametrs *params;
 	if (getuid() != 0)
 	{
 		ft_printf(":smile_8 ft_ping: need root (sudo -s)!\n");
@@ -298,15 +313,11 @@ int main(int ac, char **av)
 		ft_printf("error: need params!\n");
 		exit(1);
 	}
-//	in();
-//    g_parametrs = (t_parametrs*) ft_memalloc(sizeof(t_parametrs));
 	init();
 	get_arguments(ac, av);
 	signal(SIGALRM, sig_handler);
 	signal(SIGINT, sig_handler);
-
 	ft_ping();
-//	ft_printf("%s\n", g_parametrs->addr_str);
 	free_params();
 	return 0;
 }

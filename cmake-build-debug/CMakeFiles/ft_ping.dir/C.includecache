@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/cxim/21school/ft_ping/ft_ping.h
+/Users/mnarwhal/Desktop/ping/ft_ping.h
 stdio.h
 -
 unistd.h
@@ -24,7 +24,7 @@ arpa/inet.h
 netinet/ip_icmp.h
 -
 ft_printf/includes/printf.h
-/home/cxim/21school/ft_ping/ft_printf/includes/printf.h
+/Users/mnarwhal/Desktop/ping/ft_printf/includes/printf.h
 netdb.h
 -
 string.h
@@ -34,7 +34,7 @@ time.h
 sys/time.h
 -
 
-/home/cxim/21school/ft_ping/ft_printf/includes/libft/libft.h
+/Users/mnarwhal/Desktop/ping/ft_printf/includes/libft/libft.h
 unistd.h
 -
 stdlib.h
@@ -44,7 +44,7 @@ string.h
 fcntl.h
 -
 
-/home/cxim/21school/ft_ping/ft_printf/includes/printf.h
+/Users/mnarwhal/Desktop/ping/ft_printf/includes/printf.h
 stdio.h
 -
 unistd.h
@@ -54,9 +54,9 @@ stdarg.h
 fcntl.h
 -
 libft/libft.h
-/home/cxim/21school/ft_ping/ft_printf/includes/libft/libft.h
+/Users/mnarwhal/Desktop/ping/ft_printf/includes/libft/libft.h
 
-/home/cxim/21school/ft_ping/main.c
+/Users/mnarwhal/Desktop/ping/main.c
 ft_ping.h
-/home/cxim/21school/ft_ping/ft_ping.h
+/Users/mnarwhal/Desktop/ping/ft_ping.h
 

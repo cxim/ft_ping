@@ -74,12 +74,6 @@ void receive_from_host()
 			}
 			return;
 		}
-//		if (rec == -1)
-//		{
-////			ft_putstr_fd("Error: recmsg\n", 2);
-////			exit(1);
-//			return;
-//		}
 	}
 }
 
@@ -146,7 +140,6 @@ void get_socket_fd()
 		ft_putstr_fd("Error: setsockopt\n", 2);
 		exit(2);
 	}
-//	ft_printf("%d\n", g_parametrs->sock_fd);
 }
 
 void ft_ping()
@@ -155,7 +148,6 @@ void ft_ping()
 	printf("PING %s (%s) %d(%d) bytes of data.\n", g_parametrs->host_name, g_parametrs->addr_str, 56, 84);
 	while (!g_parametrs->sig.sin_end)
 	{
-//		printf("new str\n");
 		send_to_host();
 		alarm(10);
 		receive_from_host();
@@ -171,7 +163,6 @@ void get_stat()
 	long double mdev;
 	double loss;
 
-//	printf("stoped\n"); //signal worked | todo floating exception
 	gettimeofday(&g_parametrs->time.end, NULL);
 	start = g_parametrs->time.start;
 	end = g_parametrs->time.end;
@@ -203,13 +194,8 @@ void sig_handler(int dummy)
 
 void free_params()
 {
-//	if (params->host_name)
-//		free(params->host_name);
-//    free(params->sock);
-//	free(params->addr_str); 	g_parametrs->sock = (struct sockaddr_in *)res->ai_addr;
 	freeaddrinfo(g_parametrs->res);
 	free(g_parametrs);
-
 }
 
 void init()

@@ -46,6 +46,7 @@ void init_receive_param()
 void receive_from_host()
 {
 	int 	rec;
+	struct ip *ip;
 
 	init_receive_param();
 	while (!g_parametrs->sig.sin_end)
@@ -54,15 +55,16 @@ void receive_from_host()
 		if (rec > 0)
 		{
 			g_parametrs->byte_received = rec;
+			ip = (struct  ip*) g_parametrs->response.iovec->iov_base;
 			if (g_parametrs->pack.icmp->type == ICMP_ECHOREPLY)
 			{
 				rtt_info();
 				if (g_parametrs->host_name != g_parametrs->addr_str)
 					printf("%d bytes from %s (%s): icmp_seq=%d ttl=%d time=%.2Lf ms\n", g_parametrs->byte_received - (int) sizeof(struct iphdr), g_parametrs->host_name,
-						   g_parametrs->addr_str, g_parametrs->pack.icmp->un.echo.sequence, g_parametrs->pack.ip->ttl, g_parametrs->time.rtt);
+						   g_parametrs->addr_str, g_parametrs->pack.icmp->un.echo.sequence, ip->ip_ttl, g_parametrs->time.rtt);
 				else
 					printf("%d bytes from %s: icmp_seq=%d ttl=%d time=%.2Lf ms\n", g_parametrs->byte_received - (int) sizeof(struct iphdr),
-						   g_parametrs->addr_str, g_parametrs->pack.icmp->un.echo.sequence, g_parametrs->pack.ip->ttl, g_parametrs->time.rtt);
+						   g_parametrs->addr_str, g_parametrs->pack.icmp->un.echo.sequence, ip->ip_ttl, g_parametrs->time.rtt);
 			}
 			else if (g_parametrs->flag_v)
 			{
